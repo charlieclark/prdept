@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title> template </title>
+
+	<!-- libraries -->
+	<script src="assets/js/libs/jquery.js"></script>
+	<script src="assets/js/libs/handlebars.js"></script>
+
+	<script src="assets/js/config.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- data -->
+	<script src="assets/js/assetData.js"></script>
+	<script src="assets/js/copyData.js"></script>
+	
+	<!-- main -->
+	<script src="assets/js/classes/preload.js"></script>
+	<script src="assets/js/classes/utils.js"></script>
+	<script src="assets/js/classes/template.js"></script>
+	<script src="assets/js/classes/layout.js"></script>
+
+
+	<!-- css -->
+	<link rel="stylesheet" href="assets/css/reset.css"/>
+	<link rel="stylesheet" href="assets/css/style.css"/>
+	
+</head>
+
+<body>
+
+	<div id="container">
+
+		<div id="left-menu">
+			<div class="title"></div>
+			<div class="subtitle"></div>
+			<ul class="menu">
+				<li>philosophy</li>
+				<li>services</li>
+				<li>clients</li>
+				<li>the team</li>
+				<li>contact</li>
+			</ul>
+		</div>
+
+		<div id="right-content">
+
+			<div id="philosophy-container" class="right-container">
+			</div>
+
+			<div id="services-container" class="right-container">
+			</div>
+
+			<div id="clients-container" class="right-container">
+			</div>
+
+			<div id="team-container" class="right-container">
+			</div>
+
+			<div id="contact-container" class="right-container">
+			</div>
+
+		</div>
+
+		<div id="background-container"></div>
+		<div id="slideshow-container"></div>
+	</div>
+
+
+	<!-- templates -->
+
+	<!-- basic template -->
+	<script id="philosophy" type="text/x-handlebars-template">
+		<div class="content-container">	
+			{{#each containerArray}}
+				<div class="philosophy-gallery">
+					<div class="title">{{{title}}}</div>
+					<div class="body">{{{body}}}</div>
+				</div>
+			{{/each}}
+			<div class="progress-container"></div>
+		<div>
+	</script>
+
+
+</body>
+</html>

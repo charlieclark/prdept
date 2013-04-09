@@ -1,0 +1,36 @@
+#left-menu {
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: 10%;
+    left: 10%;
+}
+
+#right-content {
+    position: absolute;
+    background-color: black;
+    color: white;
+}
+
+/*gallery*/
+
+.progress-container {
+    width: 100px;
+    height: 20px;
+    bottom: 20px;
+    right: 20px;
+    position: absolute;
+}
+
+.progBlock {
+    width: 10px;
+    height: 10px;
+    border: solid 1px white;
+    border-radius: 10px;
+    float: left;
+    margin: 6px;
+}
+
+.progBlock.active {
+    background-color: white;
+}
