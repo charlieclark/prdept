@@ -34,7 +34,7 @@ function layoutClass(){
 			}
 
 			//initial hides
-			$(".background").hide();
+			$(".background").addClass("loading").hide();
 
 			self.showSection(-1);
 
@@ -73,8 +73,6 @@ function layoutClass(){
 
 	self.insertBackground = function(img , name){
 
-		
-
 		var curSection = null;
 		var curSectionIndex = null;
 
@@ -90,7 +88,7 @@ function layoutClass(){
 
 		if(curSection)
 		{
-			$(".background").eq(curSectionIndex).append(img);
+			$(".background").eq(curSectionIndex).append(img).removeClass("loading");
 		}
 
 		$(window).resize();
