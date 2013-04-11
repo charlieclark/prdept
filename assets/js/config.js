@@ -15,7 +15,7 @@ function configClass(){
 
 	self.baseUrl = document.URL;
 
-	self.assetPath = "";
+	self.assetPath = self.baseUrl + "/assets";
 	self.imagePath = self.assetPath + "/img";
 
 
