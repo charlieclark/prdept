@@ -17,14 +17,14 @@ html,body{
 
 #left-menu {
     position: absolute;
-    background-color: black;
+    background-color: rgba(0,0,0,0.8);
     color: white;
     z-index: 2;
 }
 
 #right-content {
     position: absolute;
-    background-color: black;
+    background-color: rgba(0,0,0,0.8);
     color: white;
     overflow-y: auto;
     overflow-x: hidden;

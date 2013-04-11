@@ -231,15 +231,33 @@ function layoutClass(){
 	}
 
 	function nextSlide(){
-		curSlide++;
+		
+		var tempSlide = curSlide
 
-		if(curSlide >= numSlides)
-			curSlide = 0;
+		tempSlide++;
 
-		showSlide(curSlide);
+		if(tempSlide >= numSlides)
+		{
+			tempSlide = 0;
+		}
+			
+
+		showSlide(tempSlide , true);
 	}
 
 	function showSlide(index , isAuto){
+
+		curSlide = index;
+
+		if(!isAuto)
+		{
+			if(slideshowTimer)
+				clearInterval(slideshowTimer);
+		}
+
+		$(".progBlock").removeClass("active");
+		$(".progBlock").eq(index).addClass("active");
+
 		if($(".philosophy-gallery.active").length >= 1 )
 		{
 			$(".philosophy-gallery.active").fadeOut("slow" , function(){
@@ -255,9 +273,12 @@ function layoutClass(){
 		showBg( getBGNumber("philosophy" + (index+1)) )
 
 		function fadeInSlide(){
-			$(".philosophy-gallery").eq(index).fadeIn("slow").addClass("active");
-			$(".progBlock").removeClass("active");
-			$(".progBlock").eq(index).addClass("active");
+			$(".philosophy-gallery").eq(index).fadeIn("slow" , function(){
+				if(!isAuto)
+				{
+					startSlideShow();
+				}
+			}).addClass("active");
 		}
 		
 	}
