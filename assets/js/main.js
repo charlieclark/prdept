@@ -19,6 +19,7 @@ function init(){
 	TEMPLATE.init();
 	CONFIG.init();
 	LAYOUT.init();
+	TWITTER.init();
 
 	//init render loop
 	animate();
@@ -42,10 +43,30 @@ function renderLoop(){
 
 function mouseEvents(){
 
+	//global
 	$("#container").mousemove(function(e){
 		CONFIG.mouseX = e.pageX;
 		CONFIG.mouseY = e.pageY;
 	});
+
+	$("#left-menu .menu li").click(function(){
+		console.log("click");
+		LAYOUT.showSection($(this).index());
+	});
+
+	//philosophy
+	$(".progBlock").click(function(){
+		LAYOUT.gallerySlide($(this).index());
+	})
+
+	//services
+	$("#services-container .bullet .title").click(function(){
+		LAYOUT.showBullet($(this).index("#services-container .bullet .title") , "#services-container .bullet .body" );
+	})
+
+	$("#team-container .bullet .title").click(function(){
+		LAYOUT.showBullet($(this).index("#team-container .bullet .title") , "#team-container .bullet .body" );
+	})
 }
 
 //resize logic

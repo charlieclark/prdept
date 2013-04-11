@@ -12,7 +12,7 @@
     color: white;
 }
 
-/*gallery*/
+/*philosophy*/
 
 .progress-container {
     width: 100px;
@@ -33,4 +33,13 @@
 
 .progBlock.active {
     background-color: white;
+}
+
+/*services*/
+#services-container .bullet .body {
+    display: none;
+}
+
+#team-container .bullet .body {
+    display: none;
 }

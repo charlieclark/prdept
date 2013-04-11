@@ -18,6 +18,7 @@
 	<script src="assets/js/classes/utils.js"></script>
 	<script src="assets/js/classes/template.js"></script>
 	<script src="assets/js/classes/layout.js"></script>
+	<script src="assets/js/classes/twitter.js"></script>
 
 
 	<!-- css -->
@@ -78,6 +79,35 @@
 				</div>
 			{{/each}}
 			<div class="progress-container"></div>
+		<div>
+	</script>
+
+	<script id="services" type="text/x-handlebars-template">
+		<div class="content-container">	
+			<div class="subtitle">{{{subtitle}}}</div>
+			{{#each list}}
+				<div class="bullet">
+					<div class="title">{{{title}}}</div>
+					<div class="body">{{{body}}}</div>	
+				</div>
+			{{/each}}
+		<div>
+	</script>
+
+	<script id="clients" type="text/x-handlebars-template">
+		<div class="content-container">	
+			<div class="body">{{{body}}}</div>
+		<div>
+	</script>
+
+	<script id="team" type="text/x-handlebars-template">
+		<div class="content-container">	
+			{{#each list}}
+				<div class="bullet">
+					<div class="title">{{{name}}} , {{{title}}}</div>
+					<div class="body">{{{body}}}</div>	
+				</div>
+			{{/each}}
 		<div>
 	</script>
 

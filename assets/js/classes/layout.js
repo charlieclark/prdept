@@ -9,6 +9,7 @@ function layoutClass(){
 
 	self.init = function(){
 
+
 			//initial hides
 			//gallery
 			numSlides = copyData.philosophy.containerArray.length;
@@ -19,7 +20,7 @@ function layoutClass(){
 				}))
 			}
 
-			self.showSection(0);
+			self.showSection(-1);
 
 
 	}
@@ -27,6 +28,16 @@ function layoutClass(){
 	self.showSection = function(index){
 		$(".right-container").hide();
 		$(".right-container").eq(index).show();
+
+
+		if(index == -1)
+		{
+			$("#right-content").hide();
+		}
+		else
+		{
+			$("#right-content").show();
+		}
 
 
 		switch(index){
@@ -39,7 +50,15 @@ function layoutClass(){
 
 	}
 
-	//gallery functionality
+
+	
+
+	//philosophy functionality
+
+	self.gallerySlide = function(index){
+		showSlide(index , false)
+	}
+
 	function initPhilosophy(){
 		$(".philosophy-gallery").hide();
 		showSlide(0);
@@ -56,7 +75,7 @@ function layoutClass(){
 		slideshowTimer = setInterval(function(){
 			nextSlide();	
 			console.log("getting here")
-		} , 2000)
+		} , 5000)
 	}
 
 	function nextSlide(){
@@ -89,23 +108,49 @@ function layoutClass(){
 		
 	}
 
+
+	//services
+
+	self.showBullet = function(index , selectorString){
+
+		var shouldSlideDown = true;
+		$(selectorString).each(function(){
+			if($(this).hasClass("active"))
+			{
+				$(this).slideUp().removeClass("active");
+				if($(this).index(selectorString) == index)
+				{
+					shouldSlideDown = false;
+				}
+
+			}
+		});
+		if(shouldSlideDown)
+			$(selectorString).eq(index).slideDown().addClass("active");
+	}
+
 	self.resize = function(){
 
 		var offset = 50;
+
+		var leftHeight = CONFIG.contentHeight - (offset*2);
+		var rightHeight = leftHeight * 0.7;
 
 
 		var leftMenuCss = {
 			"top" : offset,
 			"left" : offset,
-			"height" : CONFIG.contentHeight - (offset*2),
+			"height" : leftHeight,
 			"width" : 300
 		}
+
+
 
 		var rightContentCss = {
 			"bottom" : offset,
 			"right" : offset,
-			"height" : 600,
-			"width" : 600
+			"height" : rightHeight,
+			"width" : rightHeight
 		}
 
 		$("#left-menu").css(leftMenuCss);

@@ -24,6 +24,9 @@ function templateClass(){
 	function buildTemplates(){
 
 		processLanguageTemplate( $("#philosophy-container") , "philosophy" , copyData["philosophy"] );
+		processLanguageTemplate( $("#services-container") , "services" , copyData["services"] );
+		processLanguageTemplate( $("#clients-container") , "clients" , copyData["clients"] );
+		processLanguageTemplate( $("#team-container") , "team" , copyData["team"] );
 
 	}
 
