@@ -81,10 +81,7 @@ var UTILS = UTILS || {};
 		{
 			boundH = toH;
 			boundW = toW;
-		}
-
-		console.log(boundH , boundW);
-     
+		}    
         var newWidth;
         var newHeight;
         var excess =  _excess ;

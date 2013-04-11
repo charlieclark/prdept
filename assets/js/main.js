@@ -26,6 +26,7 @@ function init(){
 
 	//mouseEvents
 	mouseEvents();
+	loadHandlers();
 
 	//resize
 	$(window).resize();
@@ -39,6 +40,37 @@ function animate(){
 
 function renderLoop(){
 	//render classes here
+}
+
+function loadHandlers(){
+
+	 $(PRELOAD).on('group-finished' , function(event , data){
+
+	 	var tag = data.groupTag;
+	 	var elArray = data.elementArray;
+
+	 	if(tag == "firstAssets")
+	 	{
+	 		LAYOUT.insertBackground(elArray[0] , elArray[0].name);
+	 	}
+	 	else if(tag == "backgrounds")
+	 	{
+	 		for( var i = 0 ; i < elArray.length ; i++)
+	 		{
+	 			var img = elArray[i];
+	 			LAYOUT.insertBackground(img , img.name)
+	 		}
+	 	}
+	 	
+	 });
+
+            //  var tag = data.groupTag;
+
+            // if( tag == "section2-main")
+            // {
+            //     firstAssets(data);
+            //     groupsLoaded++;
+            // }
 }
 
 function mouseEvents(){
