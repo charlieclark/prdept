@@ -14,8 +14,9 @@ function templateClass(){
 		var template = Handlebars.compile(source);
 		var html = template(context);
 
-		if(dest)
+		console.log(selector , context);
 
+		if(dest.length >= 1)
 			dest.html(html)
 
 		return html;
@@ -23,10 +24,11 @@ function templateClass(){
 	}
 	function buildTemplates(){
 
-		processLanguageTemplate( $("#philosophy-container") , "philosophy" , copyData["philosophy"] );
-		processLanguageTemplate( $("#services-container") , "services" , copyData["services"] );
-		processLanguageTemplate( $("#clients-container") , "clients" , copyData["clients"] );
-		processLanguageTemplate( $("#team-container") , "team" , copyData["team"] );
+		processLanguageTemplate( $("#philosophy-container") , "philosophy-template" , copyData["philosophy"] );
+		processLanguageTemplate( $("#services-container") , "services-template" , copyData["services"] );
+		processLanguageTemplate( $("#clients-container") , "clients-template" , copyData["clients"] );
+		processLanguageTemplate( $("#team-container") , "team-template" , copyData["team"] );
+		processLanguageTemplate( $("#contact-container") , "contact-template" , copyData["contact"] );
 
 	}
 

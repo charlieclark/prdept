@@ -24,6 +24,13 @@ function twitterClass(){
 			var obj = generateTweet(data[i]);
 			tweetArray.push(obj);
 		}
+
+		var copyObj = {"tweet" : tweetArray} ;
+
+		console.log(data , copyObj)
+
+		TEMPLATE.compileTemplate( "twitter-template" ,  copyObj , $("#twitter-container") )
+
 	}
 
 	function generateTweet(obj){
@@ -35,7 +42,7 @@ function twitterClass(){
 
 		var url = "https://twitter.com/"+obj.user.id_str+"/status/" + obj.id_str;
 
-		return( {text:txt, date:stringDate, url:url } );
+		return( {text:txt, date:stringDate, url:url , user: user }  );
 	}
 
 }

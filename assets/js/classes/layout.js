@@ -132,6 +132,7 @@ function layoutClass(){
 	self.resize = function(){
 
 		var offset = 50;
+		var padding = 20;
 
 		var leftHeight = CONFIG.contentHeight - (offset*2);
 		var rightHeight = leftHeight * 0.7;
@@ -144,7 +145,12 @@ function layoutClass(){
 			"width" : 300
 		}
 
-
+		var leftMenuContentCss = {
+			"top" : padding,
+			"left" : padding,
+			"height" : leftMenuCss.height - (padding * 2),
+			"width"	 : leftMenuCss.width - (padding * 2)
+		}
 
 		var rightContentCss = {
 			"bottom" : offset,
@@ -153,8 +159,19 @@ function layoutClass(){
 			"width" : rightHeight
 		}
 
+		var rightMenuContentCss = {
+			"top" : padding,
+			"left" : padding,
+			"height" : rightContentCss.height - (padding * 2),
+			"width"	 : rightContentCss.width - (padding * 2)
+		}
+
 		$("#left-menu").css(leftMenuCss);
 		$("#right-content").css(rightContentCss);
+
+		$("#left-menu .menu-content").css(leftMenuContentCss);
+		$("#right-content .menu-content").css(rightMenuContentCss);
+
 		//resizing left menu
 
 

@@ -29,48 +29,56 @@
 
 <body>
 
-	<div id="container">
+	<div id="content">
 
 		<div id="left-menu">
-			<div class="title"></div>
-			<div class="subtitle"></div>
-			<ul class="menu">
-				<li>philosophy</li>
-				<li>services</li>
-				<li>clients</li>
-				<li>the team</li>
-				<li>contact</li>
-			</ul>
+			<div class="menu-content">
+				<div class="title">Prdept</div>
+				<div class="subtitle">subtitle goes here</div>
+				<hr/>
+				<ul class="menu">
+					<li>philosophy</li>
+					<li>services</li>
+					<li>clients</li>
+					<li>the team</li>
+					<li>contact</li>
+				</ul>
+				<div id="social">
+					<div class="social-icon" id="fbook-icon"></div>
+					<div class="social-icon" id="twitter-icon"></div>
+				</div>
+				<div id="copyright">2013 prdept</div>
+			</div>
 		</div>
 
 		<div id="right-content">
+			<div class="menu-content">
+				<div id="philosophy-container" class="right-container">
+				</div>
 
-			<div id="philosophy-container" class="right-container">
-			</div>
+				<div id="services-container" class="right-container">
+				</div>
 
-			<div id="services-container" class="right-container">
-			</div>
+				<div id="clients-container" class="right-container">
+				</div>
 
-			<div id="clients-container" class="right-container">
-			</div>
+				<div id="team-container" class="right-container">
+				</div>
 
-			<div id="team-container" class="right-container">
-			</div>
-
-			<div id="contact-container" class="right-container">
+				<div id="contact-container" class="right-container">
+				</div>
 			</div>
 
 		</div>
 
 		<div id="background-container"></div>
-		<div id="slideshow-container"></div>
 	</div>
 
 
 	<!-- templates -->
 
-	<!-- basic template -->
-	<script id="philosophy" type="text/x-handlebars-template">
+	<!-- view templates -->
+	<script id="philosophy-template" type="text/x-handlebars-template">
 		<div class="content-container">	
 			{{#each containerArray}}
 				<div class="philosophy-gallery">
@@ -82,11 +90,13 @@
 		<div>
 	</script>
 
-	<script id="services" type="text/x-handlebars-template">
+	<script id="services-template" type="text/x-handlebars-template">
 		<div class="content-container">	
 			<div class="subtitle">{{{subtitle}}}</div>
+			<hr/>
 			{{#each list}}
 				<div class="bullet">
+					<div class="bullet-icon"></div>
 					<div class="title">{{{title}}}</div>
 					<div class="body">{{{body}}}</div>	
 				</div>
@@ -94,21 +104,53 @@
 		<div>
 	</script>
 
-	<script id="clients" type="text/x-handlebars-template">
+	<script id="clients-template" type="text/x-handlebars-template">
 		<div class="content-container">	
 			<div class="body">{{{body}}}</div>
 		<div>
 	</script>
 
-	<script id="team" type="text/x-handlebars-template">
+	<script id="team-template" type="text/x-handlebars-template">
 		<div class="content-container">	
 			{{#each list}}
 				<div class="bullet">
+					<div class="bullet-icon"></div>
 					<div class="title">{{{name}}} , {{{title}}}</div>
 					<div class="body">{{{body}}}</div>	
 				</div>
 			{{/each}}
 		<div>
+	</script>
+
+	<script id="contact-template" type="text/x-handlebars-template">
+		<div class="content-container">
+
+			<div class="contact-column left">
+				<div class="contact-column-content">{{{phone}}}</div>
+				<div class="contact-column-content">{{{email}}}</div>
+			</div>
+
+			<div class="contact-column right">
+				<div class="contact-column-content">{{{address1}}}</div>
+				<div class="contact-column-content">{{{address2}}}</div>
+			</div>
+
+			<div id="twitter-container">
+			</div>
+		</div>
+	</script>
+
+	<!-- other templates -->
+	<script id="twitter-template" type="text/x-handlebars-template">
+		{{#each tweet}}
+				<div class="tweet">
+					<a href={{url}} target="_blank">
+						<div class="user">{{{user}}}</div>
+						<div class="date">{{{date}}}</div>
+						<div class="tweet-text">{{{text}}}</div>	
+					</a>
+				</div>
+		{{/each}}
 	</script>
 
 

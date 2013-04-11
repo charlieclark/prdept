@@ -58,4 +58,11 @@ var copyData ={
 	
 		]
 	},
+	"contact":
+	{
+		"phone" : "0129312",
+		"email" : "clark@clark.clark",
+		"address1" : "street street 1",
+		"address2" : "street street 2"
+	}
 }
