@@ -13,18 +13,31 @@ function configClass(){
 	self.mouseX = 0;
 	self.mouseY = 0;
 
-	self.baseUrl = document.URL;
+	self.baseURL = document.URL;
 
-	self.assetPath = self.baseUrl + "assets";
+	self.assetPath = self.baseURL + "assets";
 	self.imagePath = self.assetPath + "/img/";
+
+	//debug variables
+	self.mobileDebug = false;
 
 
 	self.init = function(){
 
-		var curUrl = self.baseUrl;
+		
 
+		URLConditions();
+
+
+	}
+
+	function URLConditions(){
+		var curURL = self.baseURL;
+
+		if( curURL.indexOf("charlieclark")>=0 )
+		{
 			
-
+		}
 
 	}
  

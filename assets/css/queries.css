@@ -1,0 +1,22 @@
+/* iPads (landscape) ----------- */
+@media only screen and (max-width : 1024px)  {
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 768px) {
+	
+}
+
+
+/* iPhone ----------- */
+@media only screen and (max-width : 640px) {
+
+}
+
+/*iphone landscape*/ 
+@media only screen and (max-device-width: 1280px)  and (orientation: landscape) {
+	    
+}
+
+ 

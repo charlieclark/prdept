@@ -3,6 +3,7 @@
 var mainPath = document.URL;
 var assetPath = document.URL + "assets";
 var curLang = "en";
+var curLayoutTag = null;
 
 
 $(document).ready(function(){
@@ -63,14 +64,6 @@ function loadHandlers(){
 	 	}
 	 	
 	 });
-
-            //  var tag = data.groupTag;
-
-            // if( tag == "section2-main")
-            // {
-            //     firstAssets(data);
-            //     groupsLoaded++;
-            // }
 }
 
 function mouseEvents(){
@@ -105,10 +98,40 @@ function mouseEvents(){
 
 $(window).resize(function(){
 		getWidthHeight();
-
 		LAYOUT.resize();
+		checkBreakpoints();
 			
 });
+
+function checkBreakpoints(){
+
+	if(CONFIG.contentWidth < 500)
+	{
+		layoutChange("mobile");
+	}
+	else
+	{
+		layoutChange("desktop")
+	}
+
+}
+
+function layoutChange(tag){
+
+	var allLayoutTags = ["desktop" , "mobile"];
+
+	if( curLayoutTag != tag)
+	{
+		curLayoutTag = tag;
+
+		for( var i = 0 ; i < allLayoutTags.length ; i++)
+		{
+			$("#content").removeClass(allLayoutTags[i]);
+		}
+
+		$("#content").addClass(curLayoutTag);
+	}
+}
 
 function getWidthHeight(){
 		CONFIG.windowHeight = $(window).height();
