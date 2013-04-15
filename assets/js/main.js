@@ -17,10 +17,13 @@ function init(){
 	PRELOAD.init(preloadData.defaultSections , [] );
 
 	//initializing classes
+	DETECTION.init();
 	TEMPLATE.init();
 	CONFIG.init();
 	LAYOUT.init();
+	SHARE.init();
 	TWITTER.init();
+
 
 	//init render loop
 	animate();
@@ -75,31 +78,51 @@ function mouseEvents(){
 	});
 
 	$("#left-menu .menu li").click(function(){
-		console.log("click");
+
+		if(DETECTION.isMobile)
+		{
+			MOBILE.toggleMenu(false);
+		}
+
 		LAYOUT.showSection($(this).index());
 	});
 
 	//philosophy
 	$(".progBlock").click(function(){
 		LAYOUT.gallerySlide($(this).index());
-	})
+	});
 
 	//services
 	$("#services-container .bullet .title").click(function(){
 		LAYOUT.showBullet($(this).index("#services-container .bullet .title") , "#services-container .bullet .body" );
-	})
+	});
 
 	$("#team-container .bullet .title").click(function(){
 		LAYOUT.showBullet($(this).index("#team-container .bullet .title") , "#team-container .bullet .body" );
-	})
+	});
+
+	$(".social-icon").click(function(){
+		if($(this).is("#fbook-icon"))
+		{
+			SHARE.fbShare();
+		}
+		else if($(this).is("#twitter-icon"))
+		{
+			SHARE.twShare();
+		}
+	});
+
 }
 
 //resize logic
 
 $(window).resize(function(){
 		getWidthHeight();
-		LAYOUT.resize();
 		checkBreakpoints();
+
+		//resizing classes
+		LAYOUT.resize();
+		DETECTION.resize();
 			
 });
 
@@ -130,6 +153,15 @@ function layoutChange(tag){
 		}
 
 		$("#content").addClass(curLayoutTag);
+
+		if(curLayoutTag == "mobile")
+		{
+			MOBILE.init();
+		}
+		else if(curLayoutTag == "desktop")
+		{
+			MOBILE.deactivate();
+		}
 	}
 }
 

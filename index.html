@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title> template </title>
+	<title> PR DEPT, a full service entertainment & lifestyle  public relations firm. </title>
 
 	<!-- libraries -->
 	<script src="assets/js/libs/jquery.js"></script>
@@ -14,11 +14,14 @@
 	<script src="assets/js/copyData.js"></script>
 	
 	<!-- main -->
+	<script src="assets/js/classes/detection.js"></script>
 	<script src="assets/js/classes/preload.js"></script>
 	<script src="assets/js/classes/utils.js"></script>
 	<script src="assets/js/classes/template.js"></script>
 	<script src="assets/js/classes/layout.js"></script>
 	<script src="assets/js/classes/twitter.js"></script>
+	<script src="assets/js/classes/mobile.js"></script>
+	<script src="assets/js/classes/share.js"></script>
 
 
 	<!-- css -->
@@ -26,6 +29,17 @@
 	<link rel="stylesheet" href="assets/css/style.css"/>
 	<link rel="stylesheet" href="assets/css/queries.css"/>
 	<link rel="stylesheet" href="assets/css/mobile.css"/>
+
+	<!-- meta data -->
+	<meta name="description" content="PR DEPT, a full service entertainment & lifestyle  public relations firm."/>
+	<meta property="og:title" content="PR DEPT, a full service entertainment & lifestyle  public relations firm."/>
+	<meta property="og:description" content=""/>
+	<meta property="og:image" content="assets/img/fbook.png"/>
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="PR DEPT" />
+	<meta name="keywords" content="public relations"/>
+
+	<link rel="shortcut icon"  href="assets/img/favicon.ico" type="image/x-icon"  />
 	
 </head>
 
@@ -45,11 +59,15 @@
 					<li>the team</li>
 					<li>contact</li>
 				</ul>
-				<div id="social">
-					<div class="social-icon" id="fbook-icon"></div>
-					<div class="social-icon" id="twitter-icon"></div>
+
+				<div id="menu-bottom">
+					<div id="social">
+						<div class="social-icon" id="fbook-icon"></div>
+						<div class="social-icon" id="twitter-icon"></div>
+					</div>
+					<div id="copyright" class="mobile-item-hide">2013 prdept</div>
+					<div id="mobile-menu-close" class="mobile-item-show"> mobile menu </div>
 				</div>
-				<div id="copyright">2013 prdept</div>
 			</div>
 		</div>
 

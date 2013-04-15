@@ -1,6 +1,6 @@
 var DETECTION = new detectionClass();
 
-function detectionClass = function(){
+function detectionClass(){
 	
 	var self = this;
 
@@ -18,6 +18,10 @@ function detectionClass = function(){
 
 	self.isTouch = function(){
 		return !!('ontouchstart' in window)         
+	}
+
+	self.resize = function(){
+		self.isMobile = !!(curLayoutTag == "mobile");
 	}
 
 	//private functions

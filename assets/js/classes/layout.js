@@ -306,32 +306,69 @@ function layoutClass(){
 
 	self.resize = function(){
 
-		var offset = 50;
+		
 		var padding = 20;
 
-		var leftHeight = CONFIG.contentHeight - (offset*2);
-		var rightHeight = leftHeight * 0.7;
+		var leftOffset ;
+		var leftHeight ;
+		var leftWidth ;
+
+		var rightOffsetTop;
+		var rightOffsetLeft;
+		var rightHeight;
+		var rightWidth ;
 
 
-		var leftMenuCss = {
-			"top" : offset,
-			"left" : offset,
-			"height" : leftHeight,
-			"width" : 300
+
+		if(DETECTION.isMobile)
+		{
+			var mobileData = MOBILE.mobileData();
+			rightOffsetLeft = 50;
+			rightOffsetTop = mobileData.menuOffset;
+			leftOffset = 0;
+
+			leftHeight = CONFIG.contentHeight * 0.7;
+			leftWidth =  CONFIG.contentWidth;
+			rightHeight = CONFIG.contentHeight - rightOffsetTop;
+			rightWidth = CONFIG.contentWidth - rightOffsetLeft*2;
+			
+			
+		}
+		else
+		{
+			leftOffset = 50;
+
+			leftHeight = CONFIG.contentHeight - (leftOffset*2);
+			leftWidth = 300;
+			rightHeight = leftHeight * 0.7;
+			rightWidth = rightHeight;
+			rightOffsetTop = CONFIG.contentHeight - (rightHeight + leftOffset)
+			rightOffsetLeft = CONFIG.contentWidth - (rightWidth + leftOffset);
 		}
 
+
+		//menu position
+		var leftMenuCss = {
+			"top" : leftOffset,
+			"left" : leftOffset,
+			"height" : leftHeight,
+			"width" : leftWidth
+		}
+
+		var rightContentCss = {
+			"top" : rightOffsetTop,
+			"left" : rightOffsetLeft,
+			"height" : rightHeight,
+			"width" : rightWidth
+		}
+
+
+		//menu content
 		var leftMenuContentCss = {
 			"top" : padding,
 			"left" : padding,
 			"height" : leftMenuCss.height - (padding * 2),
 			"width"	 : leftMenuCss.width - (padding * 2)
-		}
-
-		var rightContentCss = {
-			"bottom" : offset,
-			"right" : offset,
-			"height" : rightHeight,
-			"width" : rightHeight
 		}
 
 		var rightMenuContentCss = {
