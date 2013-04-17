@@ -104,11 +104,13 @@ function mouseEvents(){
 	$(".social-icon").click(function(){
 		if($(this).is("#fbook-icon"))
 		{
-			SHARE.fbShare();
+			// SHARE.fbShare();
+			window.open("https://www.facebook.com/pages/PR-dept/422386757809542")
 		}
 		else if($(this).is("#twitter-icon"))
 		{
-			SHARE.twShare();
+			// SHARE.twShare();
+			window.open("https://twitter.com/PR_dept");
 		}
 	});
 
