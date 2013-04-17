@@ -1,5 +1,12 @@
 var copyData ={
 
+	//globally available
+	"global":
+	{
+		//use : {{global "videoDisabled"}}
+		// videoDisabled : "this camera is clogged with toppings!"
+	},
+
 	"philosophy" :
 	{
 		"containerArray":

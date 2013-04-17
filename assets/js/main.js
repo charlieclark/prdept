@@ -53,21 +53,32 @@ function loadHandlers(){
 	 	var tag = data.groupTag;
 	 	var elArray = data.elementArray;
 
-	 	if(tag == "firstAssets")
+
+	 	for (var i = 0 ; i < elArray.length ; i++)
 	 	{
-	 		LAYOUT.insertBackground(elArray[0] , elArray[0].name);
+	 		var curEl = elArray[i];
+	 		handleAssetLoad(curEl , tag , i);
 	 	}
-	 	else if(tag == "backgrounds")
-	 	{
-	 		for( var i = 0 ; i < elArray.length ; i++)
-	 		{
-	 			var img = elArray[i];
-	 			LAYOUT.insertBackground(img , img.name)
-	 		}
-	 	}
+
+	 	$(window).resize();
 	 	
-	 });
+	 }); 
 }
+
+function handleAssetLoad(el , tag , index)
+{
+	var name = el.name;
+
+	if( tag.indexOf("first-assets") >= 0 )
+	{
+		LAYOUT.insertBackground(el , name);
+	}
+	else if(tag.indexOf("backgrounds") >= 0)
+ 	{
+ 		LAYOUT.insertBackground(el , name)
+ 	}
+}
+
 
 function mouseEvents(){
 
