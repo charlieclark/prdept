@@ -5,6 +5,12 @@ function templateClass(){
 	var self = this;
 
 	self.init = function(){
+
+		//creating global ref
+		Handlebars.registerHelper('global', function(name) {
+		  return copyData.global[name]
+		});
+
 		buildTemplates();
 	}
 

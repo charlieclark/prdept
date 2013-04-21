@@ -5,7 +5,7 @@ var preloadData = {
 
 	sections:
 	{
-		"global" : ["firstAssets" , "backgrounds"]
+		"global" : ["first-assets" , "backgrounds"]
 	}
 
 }
@@ -14,7 +14,7 @@ var preloadData = {
 var imageGroups = {
 
 	// "test-array":
-	"firstAssets":
+	"first-assets":
 	{
 		"array":
 		[
