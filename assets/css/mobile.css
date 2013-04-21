@@ -1,3 +1,47 @@
-.mobile #left-menu {
-    background-color: rgba(0,0,0,0.9);
+.mobile #left-menu{
+	position: inherit;
+	margin-top: 20px;
+}
+.mobile .menu-content{
+	position: relative;
+	padding: 50px;
+	text-align: center;
+}
+
+.mobile #menu-bottom {
+    position: inherit;
+    margin-top: 20px;
+}
+
+.mobile #left-menu .menu-content .title {
+    width: 121px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mobile #mobile-content {
+    position: relative;
+    z-index: 9;
+}
+
+.mobile .mobile-container {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    margin: 100px 20px;
+}
+
+.mobile .content-container{
+	padding: 20px;
+}
+
+.mobile .gallery .title {
+    margin-top: 30px;
+}
+
+.mobile .mobile-title.mobile-show {
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border-bottom: solid 1px;
+    height: 1.7em;
 }

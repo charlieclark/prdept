@@ -79,11 +79,6 @@ function mouseEvents(){
 
 	$("#left-menu .menu li").click(function(){
 
-		if(DETECTION.isMobile)
-		{
-			MOBILE.toggleMenu(false);
-		}
-
 		LAYOUT.showSection($(this).index());
 	});
 
@@ -102,12 +97,12 @@ function mouseEvents(){
 	});
 
 	$(".social-icon").click(function(){
-		if($(this).is("#fbook-icon"))
+		if($(this).is(".fbook-icon"))
 		{
 			// SHARE.fbShare();
 			window.open("https://www.facebook.com/pages/PR-dept/422386757809542")
 		}
-		else if($(this).is("#twitter-icon"))
+		else if($(this).is(".twitter-icon"))
 		{
 			// SHARE.twShare();
 			window.open("https://twitter.com/PR_dept");
@@ -151,10 +146,10 @@ function layoutChange(tag){
 
 		for( var i = 0 ; i < allLayoutTags.length ; i++)
 		{
-			$("#content").removeClass(allLayoutTags[i]);
+			$("body").removeClass(allLayoutTags[i]);
 		}
 
-		$("#content").addClass(curLayoutTag);
+		$("body").addClass(curLayoutTag);
 
 		if(curLayoutTag == "mobile")
 		{

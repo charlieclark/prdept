@@ -46,7 +46,8 @@ function layoutClass(){
 		
 
 		$(".right-container").hide();
-		$(".right-container").eq(index).show();
+		if(index >= 0)
+			$(".right-container").eq(index).show();
 		curSectionName = sectionOrderArray[index+1];
 		var tempBgNum = getBGNumber( sectionOrderArray[index+1] );
 		showBg(tempBgNum);
@@ -320,30 +321,22 @@ function layoutClass(){
 
 
 
-		if(DETECTION.isMobile)
-		{
-			var mobileData = MOBILE.mobileData();
-			rightOffsetLeft = 50;
-			rightOffsetTop = mobileData.menuOffset;
-			leftOffset = 0;
-
-			leftHeight = CONFIG.contentHeight * 0.7;
-			leftWidth =  CONFIG.contentWidth;
-			rightHeight = CONFIG.contentHeight - rightOffsetTop;
-			rightWidth = CONFIG.contentWidth - rightOffsetLeft*2;
-			
-			
-		}
-		else
+		if(!DETECTION.isMobile)
 		{
 			leftOffset = 50;
 
 			leftHeight = CONFIG.contentHeight - (leftOffset*2);
-			leftWidth = 300;
+			leftWidth = 250;
 			rightHeight = leftHeight * 0.7;
-			rightWidth = rightHeight;
+			rightWidth = rightHeight * 1.3;
 			rightOffsetTop = CONFIG.contentHeight - (rightHeight + leftOffset)
 			rightOffsetLeft = CONFIG.contentWidth - (rightWidth + leftOffset);
+		}
+		else
+		{
+			$("#content").css({
+				"width" : CONFIG.contentWidth
+			})
 		}
 
 
@@ -378,10 +371,10 @@ function layoutClass(){
 			"width"	 : rightContentCss.width - (padding * 2)
 		}
 
-		$("#left-menu").css(leftMenuCss);
+		$("#left-menu-container").css(leftMenuCss);
 		$("#right-content").css(rightContentCss);
 
-		$("#left-menu .menu-content").css(leftMenuContentCss);
+		$("#left-menu-container	 .menu-content").css(leftMenuContentCss);
 		$("#right-content .menu-content").css(rightMenuContentCss);
 
 		//resizing background images
@@ -402,7 +395,9 @@ function layoutClass(){
 			}
 		});
 
-		//resizing left menu
+		//big resize
+
+		
 
 
 	}

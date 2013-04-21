@@ -4,20 +4,34 @@ a {
     text-decoration: none;
 }
 
-html,body{
+html{
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+    position: relative;
+    height: auto;
+    overflow-y: hidden;
+}
+
+body{
     position: absolute;
+    overflow: hidden;
+}
+
+body.desktop{
+    position: absolute;
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 #content{
     font-family: courier , monospace;
 }
 
-#left-menu {
+/*left menu*/
+
+#left-menu-container {
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     color: white;
     z-index: 4;
 }
@@ -27,12 +41,28 @@ html,body{
     background-size: contain;
     text-indent: -9999px;
     height: 29px;
+    margin-top: 30px;
 }
 
+#left-menu .menu-content .subtitle {
+    margin-top: 40px;
+    font-size: 12px;
+}
+hr {
+    margin: 28px 0;
+}
+#left-menu li {
+    text-transform: uppercase;
+    margin-top: 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*right menu*/
 
 #right-content {
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     color: white;
     overflow-y: auto;
     overflow-x: hidden;
@@ -44,9 +74,10 @@ html,body{
 }
 
 #social {
-    left: 0;
+    left: -4px;
     bottom: 0;
     position: absolute;
+    margin-bottom: -11px;
 }
 
 #menu-bottom {
@@ -67,14 +98,17 @@ html,body{
     bottom: 0;
     right: 0;
     position: absolute;
+    font-size: 12px;
 }
 
 #background-container {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     z-index: 1;
+    top: 0;
+    left: 0;
 }
 .background {
     position: absolute;
@@ -94,13 +128,14 @@ html,body{
     height: 100%;
 }
 
-#fbook-icon {
+.fbook-icon {
     background: url('../img/fbook-icon.png') no-repeat;
     background-size: contain;
 }
-#twitter-icon {
+.twitter-icon {
     background: url('../img/tw-icon.png') no-repeat;
     background-size: contain;
+    margin-left: 6px;
 }
 
 
@@ -121,21 +156,59 @@ html,body{
 }
 
 /*bullets*/
+
+.list .subtitle {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.list .bullet {
+    font-size: 14px;
+    margin-top: 25px;
+    position: relative;
+    margin-left: 21px;
+    cursor: pointer;
+}
+
+.bullet .title {
+    cursor: pointer;
+}
+
 .bullet .body {
     display: none;
+    font-size: 12px;
+    line-height: 1.5em;
+    margin-top: 12px;
 }
 
 .bullet-icon {
     width: 10px;
     height: 10px;
     background: url('../img/plus.png');
-    float: left;
+    position: absolute;
     background-size: contain;
+    left: -20px;
+    top: 4px;
 }
 .social-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     display: inline-block;
+    cursor: pointer;
+}
+
+/*gallery*/
+.gallery .title {
+    margin-bottom: 21px;
+    font-size: 18px;
+}
+.gallery .body {
+    font-size: 14px;
+    line-height: 1.4em;
+}
+
+.content-container {
+    padding-bottom: 30px;
+    font-size: 14px;
 }
 
 /*philosophy*/
@@ -155,6 +228,7 @@ html,body{
     border-radius: 10px;
     float: left;
     margin: 6px;
+    cursor: pointer;
 }
 
 .progBlock.active {
@@ -164,3 +238,35 @@ html,body{
 
 
 /*contact*/
+
+#clients-container .body {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+.contact-column {
+    width: 50%;
+    float: left;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+.contact-column-container {
+    width: 100%;
+    height: 32px;
+}
+
+.contact-twitter-title {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.tweet {
+    margin-bottom: 23px;
+}
+.user {
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+}
+.tweet-title {
+    margin-bottom: 10px;
+}

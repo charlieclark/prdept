@@ -1,6 +1,8 @@
 <html>
 <head>
 	<title> PR DEPT, a full service entertainment & lifestyle  public relations firm. </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
 
 	<!-- libraries -->
 	<script src="assets/js/libs/jquery.js"></script>
@@ -47,49 +49,56 @@
 
 	<div id="content">
 
-		<div id="left-menu">
-			<div class="menu-content">
-				<div class="title">Prdept</div>
-				<div class="subtitle">PR DEPT is a full service entertainment & lifestyle public relations firm.</div>
-				<hr/>
-				<ul class="menu">
-					<li>philosophy</li>
-					<li>services</li>
-					<li>clients</li>
-					<li>the team</li>
-					<li>contact</li>
-				</ul>
+		<div id="desktop-content">
 
-				<div id="menu-bottom">
-					<div id="social">
-						<div class="social-icon" id="fbook-icon"></div>
-						<div class="social-icon" id="twitter-icon"></div>
+		<div id="left-menu-container">
+			<div id="left-menu" class="mobile-container">
+				<div class="menu-content">
+					<div class="title">Prdept</div>
+					<div class="subtitle">PR DEPT is a full service entertainment & lifestyle public relations firm.</div>
+					<hr/>
+					<ul class="menu">
+						<li>philosophy</li>
+						<li>services</li>
+						<li>clients</li>
+						<li>the team</li>
+						<li>contact</li>
+					</ul>
+
+					<div id="menu-bottom">
+						<div id="social">
+							<div class="social-icon fbook-icon"></div>
+							<div class="social-icon twitter-icon"></div>
+						</div>
+						<div id="copyright" >2013 prdept</div>
 					</div>
-					<div id="copyright" class="mobile-item-hide">2013 prdept</div>
-					<div id="mobile-menu-close" class="mobile-item-show"> mobile menu </div>
 				</div>
 			</div>
 		</div>
 
 		<div id="right-content">
 			<div class="menu-content">
-				<div id="philosophy-container" class="right-container">
+				<div id="philosophy-container" class="right-container mobile-container">
 				</div>
 
-				<div id="services-container" class="right-container">
+				<div id="services-container" class="right-container mobile-container">
 				</div>
 
-				<div id="clients-container" class="right-container">
+				<div id="clients-container" class="right-container mobile-container">
 				</div>
 
-				<div id="team-container" class="right-container">
+				<div id="team-container" class="right-container mobile-container">
 				</div>
 
-				<div id="contact-container" class="right-container">
+				<div id="contact-container" class="right-container mobile-container">
 				</div>
 			</div>
 
 		</div>
+
+		</div>
+
+		<div id="mobile-content"></div>
 
 		<div id="background-container"></div>
 	</div>
@@ -100,8 +109,9 @@
 	<!-- view templates -->
 	<script id="philosophy-template" type="text/x-handlebars-template">
 		<div class="content-container">	
+			<div class="mobile-title mobile-show">{{sectionName}}</div>
 			{{#each containerArray}}
-				<div class="philosophy-gallery">
+				<div class="philosophy-gallery gallery">
 					<div class="title">{{{title}}}</div>
 					<div class="body">{{{body}}}</div>
 				</div>
@@ -111,7 +121,8 @@
 	</script>
 
 	<script id="services-template" type="text/x-handlebars-template">
-		<div class="content-container">	
+		<div class="services content-container list">	
+			<div class="mobile-title mobile-show">{{sectionName}}</div>
 			<div class="subtitle">{{{subtitle}}}</div>
 			<hr/>
 			{{#each list}}
@@ -126,12 +137,14 @@
 
 	<script id="clients-template" type="text/x-handlebars-template">
 		<div class="content-container">	
+			<div class="mobile-title mobile-show">{{sectionName}}</div>
 			<div class="body">{{{body}}}</div>
 		<div>
 	</script>
 
 	<script id="team-template" type="text/x-handlebars-template">
-		<div class="content-container">	
+		<div class="team content-container list">
+		<div class="mobile-title mobile-show">{{sectionName}}</div>	
 			{{#each list}}
 				<div class="bullet">
 					<div class="bullet-icon"></div>
@@ -144,18 +157,22 @@
 
 	<script id="contact-template" type="text/x-handlebars-template">
 		<div class="content-container">
+		<div class="mobile-title mobile-show">{{sectionName}}</div>
 
-			<div class="contact-column left">
-				<div class="contact-column-content">{{{phone}}}</div>
-				<div class="contact-column-content">{{{email}}}</div>
+			<div class="contact-column-container">
+				<div class="contact-column left">
+					<div class="contact-column-content">{{{phone}}}</div>
+					<div class="contact-column-content">{{{email}}}</div>
+				</div>
+
+				<div class="contact-column right">
+					<div class="contact-column-content">{{{address1}}}</div>
+					<div class="contact-column-content">{{{address2}}}</div>
+				</div>
 			</div>
-
-			<div class="contact-column right">
-				<div class="contact-column-content">{{{address1}}}</div>
-				<div class="contact-column-content">{{{address2}}}</div>
-			</div>
-
-			<div id="twitter-container">
+			<hr/>
+			<div class="contact-twitter-title">{{twitterTitle}}</div>
+			<div class="twitter-container">
 			</div>
 		</div>
 	</script>
@@ -165,8 +182,10 @@
 		{{#each tweet}}
 				<div class="tweet">
 					<a href={{url}} target="_blank">
-						<div class="user">{{{user}}}</div>
-						<div class="date">{{{date}}}</div>
+						<div class="tweet-title">
+							<div class="user">@{{{user}}}</div>
+							<div class="date"> {{{date}}}</div>
+						</div>
 						<div class="tweet-text">{{{text}}}</div>	
 					</a>
 				</div>
