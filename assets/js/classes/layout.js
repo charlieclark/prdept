@@ -9,6 +9,11 @@ function layoutClass(){
 	var sectionOrderArray = [ "splash" , "philosophy" , "services" , "clients" , "team" , "contact" ];
 	var numBgs = 9;
 	var curBgNum = null;
+	var lastBgNum = null;
+	var slideFading = false;
+
+
+
 
 	self.init = function(){
 
@@ -41,6 +46,19 @@ function layoutClass(){
 
 	}
 
+	//getters
+	self.getBgData = function(){
+		return {"lastBgNum" : lastBgNum , "curBgNum" : curBgNum};
+	}
+
+	//setters
+	self.setBgIndex = function(index){
+		showBg(index);
+	}
+	self.nextSlide = function(){nextSlide()}
+	self.prevSlide = function(){prevSlide()}
+	self.showSlide = function(index){showSlide(index,false)}
+
 	self.showSection = function(index){
 
 		
@@ -49,7 +67,7 @@ function layoutClass(){
 		if(index >= 0)
 			$(".right-container").eq(index).show();
 		curSectionName = sectionOrderArray[index+1];
-		var tempBgNum = getBGNumber( sectionOrderArray[index+1] );
+		var tempBgNum = getBgNumber( sectionOrderArray[index+1] );
 		showBg(tempBgNum);
 
 		if(index == -1)
@@ -62,9 +80,17 @@ function layoutClass(){
 		}
 
 
+		isGallery = false;
 		switch(index){
+
+			case -1:
+			{
+				$("#left-menu .menu li").removeClass("active");
+				break;
+			}
 			case 0 :
 			{
+				isGallery = true;
 				initPhilosophy();
 				break;
 			}
@@ -82,7 +108,7 @@ function layoutClass(){
 			if(  name.indexOf( sectionOrderArray[i] ) >= 0 )
 			{
 				curSection = sectionOrderArray[i];
-				curSectionIndex = getBGNumber(name);
+				curSectionIndex = getBgNumber(name);
 				break;
 			}
 		}
@@ -105,6 +131,8 @@ function layoutClass(){
 		}
 		else
 		{
+			if(curBgNum)
+				lastBgNum = curBgNum
 			curBgNum = index;
 		}
 		
@@ -135,7 +163,7 @@ function layoutClass(){
 
 	}
 
-	function getBGNumber(name){
+	function getBgNumber(name){
 
 		var philoIndex = null;
 		var numPhilo = 4;
@@ -219,7 +247,6 @@ function layoutClass(){
 			clearInterval(slideshowTimer);
 
 		slideshowTimer = setInterval(function(){
-			console.log(curSectionName)
 			if(curSectionName == "philosophy")
 			{
 				nextSlide();
@@ -228,7 +255,23 @@ function layoutClass(){
 			{
 				clearInterval(slideshowTimer)
 			}
-		} , 5000)
+		} , 10000)
+	}
+
+	function prevSlide(){
+
+		var tempSlide = curSlide
+
+		tempSlide--;
+
+		if(tempSlide < 0)
+		{
+			tempSlide = numSlides-1;
+		}
+			
+
+		showSlide(tempSlide , true);
+
 	}
 
 	function nextSlide(){
@@ -248,6 +291,9 @@ function layoutClass(){
 
 	function showSlide(index , isAuto){
 
+		if(slideFading  || !isGallery)
+			return;
+
 		curSlide = index;
 
 		if(!isAuto)
@@ -258,6 +304,8 @@ function layoutClass(){
 
 		$(".progBlock").removeClass("active");
 		$(".progBlock").eq(index).addClass("active");
+
+		slideFading = true;
 
 		if($(".philosophy-gallery.active").length >= 1 )
 		{
@@ -271,7 +319,7 @@ function layoutClass(){
 			fadeInSlide();
 		}
 
-		showBg( getBGNumber("philosophy" + (index+1)) )
+		showBg( getBgNumber("philosophy" + (index+1)) )
 
 		function fadeInSlide(){
 			$(".philosophy-gallery").eq(index).fadeIn("slow" , function(){
@@ -280,6 +328,8 @@ function layoutClass(){
 					startSlideShow();
 				}
 			}).addClass("active");
+
+			slideFading = false;
 		}
 		
 	}

@@ -4,6 +4,8 @@ var mainPath = document.URL;
 var assetPath = document.URL + "assets";
 var curLang = "en";
 var curLayoutTag = null;
+var isMobile = null;
+var isGallery = null;
 
 
 $(document).ready(function(){
@@ -44,6 +46,10 @@ function animate(){
 
 function renderLoop(){
 	//render classes here
+	if(isMobile)
+	{
+		MOBILE.checkScroll();
+	}
 }
 
 function loadHandlers(){
@@ -83,15 +89,53 @@ function handleAssetLoad(el , tag , index)
 function mouseEvents(){
 
 	//global
-	$("#container").mousemove(function(e){
+	$("#background-container").mousemove(function(e){
 		CONFIG.mouseX = e.pageX;
 		CONFIG.mouseY = e.pageY;
+
+		if(isGallery)
+		{
+			if(CONFIG.mouseX >  CONFIG.windowWidth/2)
+			{
+				$("body").addClass("rightArrow");
+				$("body").removeClass("leftArrow");
+			}
+			else
+			{
+				$("body").addClass("leftArrow");
+				$("body").removeClass("rightArrow");
+			}
+		}
+		else
+		{
+			$("body").removeClass("leftArrow");
+			$("body").removeClass("rightArrow");
+		}
 	});
+
+	$("#content").click(function(){
+		if($("body").hasClass("leftArrow"))
+		{
+			LAYOUT.prevSlide();
+		}
+		else if($("body").hasClass("rightArrow"))
+		{
+			LAYOUT.nextSlide();
+		}
+	})
 
 	$("#left-menu .menu li").click(function(){
 
 		LAYOUT.showSection($(this).index());
+		$("#left-menu .menu li").removeClass("active");
+		$(this).addClass("active")
+
 	});
+
+	$("#left-menu .title").click(function(){
+		LAYOUT.showSection(-1);
+		
+	})
 
 	//philosophy
 	$(".progBlock").click(function(){
@@ -101,10 +145,37 @@ function mouseEvents(){
 	//services
 	$("#services-container .bullet .title").click(function(){
 		LAYOUT.showBullet($(this).index("#services-container .bullet .title") , "#services-container .bullet .body" );
+		
+		var curBullet = $(this).parents(".bullet").find(".bullet-icon");
+		var allBullets = $("#services-container .bullet .bullet-icon");
+
+		if(curBullet.hasClass("open"))
+		{
+			allBullets.removeClass("open");
+		}
+		else
+		{
+			allBullets.removeClass("open");
+			curBullet.addClass("open");
+		}	
 	});
 
 	$("#team-container .bullet .title").click(function(){
 		LAYOUT.showBullet($(this).index("#team-container .bullet .title") , "#team-container .bullet .body" );
+
+		var curBullet = $(this).parents(".bullet").find(".bullet-icon");
+		var allBullets = $("#team-container .bullet .bullet-icon");
+
+		if(curBullet.hasClass("open"))
+		{
+			allBullets.removeClass("open");
+		}
+		else
+		{
+			allBullets.removeClass("open");
+			curBullet.addClass("open");
+		}
+	
 	});
 
 	$(".social-icon").click(function(){
@@ -165,10 +236,12 @@ function layoutChange(tag){
 		if(curLayoutTag == "mobile")
 		{
 			MOBILE.init();
+			isMobile = true;
 		}
 		else if(curLayoutTag == "desktop")
 		{
 			MOBILE.deactivate();
+			isMobile = false;
 		}
 	}
 }

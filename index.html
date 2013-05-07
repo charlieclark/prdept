@@ -31,6 +31,7 @@
 	<link rel="stylesheet" href="assets/css/style.css"/>
 	<link rel="stylesheet" href="assets/css/queries.css"/>
 	<link rel="stylesheet" href="assets/css/mobile.css"/>
+	<link rel="stylesheet" href="assets/css/fonts.css"/>
 
 	<!-- meta data -->
 	<meta name="description" content="PR DEPT is a full service entertainment & lifestyle  public relations firm."/>
@@ -52,7 +53,7 @@
 		<div id="desktop-content">
 
 		<div id="left-menu-container">
-			<div id="left-menu" class="mobile-container">
+			<div id="left-menu" class="mobile-container mobile-bg-el">
 				<div class="menu-content">
 					<div class="title">Prdept</div>
 					<div class="subtitle">PR DEPT is a full service entertainment & lifestyle public relations firm.</div>
@@ -70,7 +71,7 @@
 							<div class="social-icon fbook-icon"></div>
 							<div class="social-icon twitter-icon"></div>
 						</div>
-						<div id="copyright" >2013 prdept</div>
+						<div id="copyright" >&#169; 2013 prdept</div>
 					</div>
 				</div>
 			</div>
@@ -81,16 +82,16 @@
 				<div id="philosophy-container" class="right-container mobile-container">
 				</div>
 
-				<div id="services-container" class="right-container mobile-container">
+				<div id="services-container" class="right-container mobile-container mobile-bg-el">
 				</div>
 
-				<div id="clients-container" class="right-container mobile-container">
+				<div id="clients-container" class="right-container mobile-container mobile-bg-el">
 				</div>
 
-				<div id="team-container" class="right-container mobile-container">
+				<div id="team-container" class="right-container mobile-container mobile-bg-el">
 				</div>
 
-				<div id="contact-container" class="right-container mobile-container">
+				<div id="contact-container" class="right-container mobile-container mobile-bg-el">
 				</div>
 			</div>
 
@@ -111,7 +112,7 @@
 		<div class="content-container">	
 			<div class="mobile-title mobile-show">{{sectionName}}</div>
 			{{#each containerArray}}
-				<div class="philosophy-gallery gallery">
+				<div class="philosophy-gallery gallery mobile-bg-el">
 					<div class="title">{{{title}}}</div>
 					<div class="body">{{{body}}}</div>
 				</div>
@@ -148,7 +149,7 @@
 			{{#each list}}
 				<div class="bullet">
 					<div class="bullet-icon"></div>
-					<div class="title">{{{name}}} , {{{title}}}</div>
+					<div class="title">{{{name}}} , <span class="real-title">{{{title}}}</span></div>
 					<div class="body">{{{body}}}</div>	
 				</div>
 			{{/each}}

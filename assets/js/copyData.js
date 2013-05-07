@@ -83,7 +83,7 @@ var copyData ={
 			{
 				name : "Chet Mehta",
 				title : "Founder and CEO",
-				body : "Over the past decade, Chet has designed and executed publicity campaigns across a broad spectrum of entertainment and lifestyle genres, from fashion and film, to consumer products and non-profits. He has implemented successful publicity campaigns for Macy\'s, J Brand, Lacoste, Swarovski Elements, Origins, Elle, Instyle, Allure, Gq, Variety, Marie Claire, Walt Disney Home Entertainment, Warner Home Video and Warner Consumer Products, Zico Coconut Water, Gen Art, AIDS Walk, The Entertainment Industry Foundation, And The Telluride Film Festival. <br/> <br/> Chet also has considerable experience in event publicity, spearheading campaigns for Entertainment Tonight\'s annual Emmy Party, Entertainment Weekly\'s annual Grammy and SAG parties, Elle Magazine\'s \"Women in Hollywood\" celebration, Variety\'s \"Power of Women\" event, Stand Up 2 Cancer\'s multi-network, televised fundraiser, which earned over $180 million in pledges for cancer research, as well as the first three films in Summit\'s Twilight series. He helped launch the Variety Studio at Sundance and the Toronto International Film Festival, and has had huge success integrating brands into NY Fashion Week, the LA Film Festival, the Independent Spirit Awards, Coachella, Comic Con, and SXSW."
+				body : "Over the past decade, Chet has designed and executed publicity campaigns across a broad spectrum of entertainment and lifestyle genres, from fashion and film, to consumer products and non-profits. He has implemented successful publicity campaigns for Macy\'s, J Brand, Lacoste, Swarovski Elements, Origins, Elle, Instyle, Allure, GQ, Variety, Marie Claire, Walt Disney Home Entertainment, Warner Home Video and Warner Consumer Products, Zico Coconut Water, Gen Art, AIDS Walk, The Entertainment Industry Foundation, And The Telluride Film Festival. <br/> <br/> Chet also has considerable experience in event publicity, spearheading campaigns for Entertainment Tonight\'s annual Emmy Party, Entertainment Weekly\'s annual Grammy and SAG parties, Elle Magazine\'s \"Women in Hollywood\" celebration, Variety\'s \"Power of Women\" event, Stand Up 2 Cancer\'s multi-network, televised fundraiser, which earned over $180 million in pledges for cancer research, as well as the first three films in Summit\'s Twilight series. He helped launch the Variety Studio at Sundance and the Toronto International Film Festival, and has had huge success integrating brands into NY Fashion Week, the LA Film Festival, the Independent Spirit Awards, Coachella, Comic Con, and SXSW."
 			},
 			{
 				name : "Laura Gray",
@@ -104,12 +104,12 @@ var copyData ={
 				name : "Alyssa Some",
 				title : "Account Executive, Junior",
 				body : "Alyssa is an integral part of the day-to-day operations, specializing in celebrity outreach, media pitching and campaign strategy. Prior to joining the team at PR Dept, Alyssa held positions at both Slate and ID, where she worked with Burberry, and gained significant experience in major red carpet events, including The Screen Actors\' Guild Awards, the Vanity Fair Oscar Party, the Critics\' Choice Movie Awards, the LACMA Film + Art Gala, The American Music Awards, The Los Angeles Food & Wine Festival, and the Children\'s Defense Fund."
-			},
-			{
-				name : "Carolyn Bova",
-				title : "Assistant",
-				body : "Carolyn is the newest member of the team, having worked with Chet both at  Sunshine Sachs and ID.  Carolyn has had the pleasure of working on some of the world's most exciting red carpet events including The Golden Globes,  Clear Channel¹s iHeartRadio Music Festival in Las Vegas, and CHASE's American Giving Awards.   At PR Dept. Carolyn pushes her talents to new heights implementing social media campaigns and tools to various campaigns and the day-to-day clients she works closely on."
 			}
+			// {
+			// 	name : "Carolyn Bova",
+			// 	title : "Assistant",
+			// 	body : "Carolyn is the newest member of the team, having worked with Chet both at  Sunshine Sachs and ID.  Carolyn has had the pleasure of working on some of the world's most exciting red carpet events including The Golden Globes,  Clear Channel¹s iHeartRadio Music Festival in Las Vegas, and CHASE's American Giving Awards.   At PR Dept. Carolyn pushes her talents to new heights implementing social media campaigns and tools to various campaigns and the day-to-day clients she works closely on."
+			// }
 	
 		]
 	},

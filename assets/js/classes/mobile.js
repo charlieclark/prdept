@@ -6,6 +6,8 @@ function mobileClass(){
 	var hasInit = false;
 	var menuOpen = false;
 
+	var mobileContainers = [];
+
 
 	self.init = function(){
 
@@ -17,9 +19,20 @@ function mobileClass(){
 		{
 			hasInit = true;
 
+			$(window).scroll(function(){
+
+				// getCurentScrollSection( $("body").scrollTop() );
+				
+			})
 			
 		}
 
+
+	}
+
+	self.checkScroll = function(){
+		var curScroll = $("body").scrollTop();
+		getCurentScrollSection(curScroll);
 	}
 
 	self.deactivate = function(){
@@ -27,9 +40,15 @@ function mobileClass(){
 		$("#mobile-content").empty();
 		$(".progress-container").show();
 		$(".mobile-show").hide();
+
+		LAYOUT.showSlide(0);
+		LAYOUT.showSection(-1);
+		mobileContainers = [];
 	}
 
 	self.activate = function(){
+
+		$(".philosophy-gallery").show();
 
 		$(".mobile-show").show();
 
@@ -43,8 +62,14 @@ function mobileClass(){
 		$("#desktop-content").hide();
 
 		$(".mobile-container").each(function(){
-			$(this).clone().appendTo($("#mobile-content"));
+			var newContainer = 	$(this).clone();
+			newContainer.appendTo($("#mobile-content"));
+			
 		});
+
+		$("#mobile-content .mobile-bg-el").each(function(){
+			mobileContainers.push($(this));
+		})
 
 		$("#mobile-content .right-container").show();
 
@@ -90,6 +115,44 @@ function mobileClass(){
 			}
 		});
 
+	}
+
+	function getCurentScrollSection(scroll){
+
+		var bgData = LAYOUT.getBgData();
+		var curBgNum = bgData.curBgNum;
+		var lastBgNum = bgData.lastBgNum;
+		var dir = null;
+
+		if(curBgNum > lastBgNum || lastBgNum == null)
+		{
+			dir = 1;
+		}
+		else
+		{
+			dir = -1;
+		}
+
+		var curStep = 0;
+
+		for(var i = 0 ; i < mobileContainers.length-1 ; i++)
+		{
+			var elScroll1 = mobileContainers[i].position().top -100;
+			var elScroll2 = mobileContainers[i+1].position().top -100;
+
+			if(scroll > elScroll1 && scroll < elScroll2)
+			{
+				curStep = i;
+				break
+			}
+		}
+
+		if( curStep == 0 && scroll > mobileContainers[2].position().top)
+		{
+			curStep = mobileContainers.length-1;
+		}
+
+		LAYOUT.setBgIndex(curStep);
 	}
 
 	self.mobileData = function(){

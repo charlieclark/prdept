@@ -1,11 +1,11 @@
 .mobile #left-menu{
-	position: inherit;
-	margin-top: 20px;
+    position: inherit;
+    margin-top: 20px;
 }
 .mobile .menu-content{
-	position: relative;
-	padding: 50px;
-	text-align: center;
+    position: relative;
+    padding: 50px;
+    text-align: left;
 }
 
 .mobile #menu-bottom {
@@ -15,7 +15,6 @@
 
 .mobile #left-menu .menu-content .title {
     width: 121px;
-    margin: auto;
     margin-top: 20px;
 }
 
@@ -31,7 +30,7 @@
 }
 
 .mobile .content-container{
-	padding: 20px;
+    padding: 20px;
 }
 
 .mobile .gallery .title {
@@ -44,4 +43,8 @@
     font-size: 18px;
     border-bottom: solid 1px;
     height: 1.7em;
+}
+
+.philosophy-gallery.gallery.mobile-bg-el {
+    margin-bottom: 100px;
 }
