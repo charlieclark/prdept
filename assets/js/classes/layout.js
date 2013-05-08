@@ -381,13 +381,23 @@ function layoutClass(){
 			rightWidth = rightHeight * 1.3;
 			rightOffsetTop = CONFIG.contentHeight - (rightHeight + leftOffset)
 			rightOffsetLeft = CONFIG.contentWidth - (rightWidth + leftOffset);
+
+			var minLeft =  (leftOffset*2 + leftWidth)
+			if( rightOffsetLeft < minLeft)
+			{
+				rightWidth = rightWidth - (minLeft - rightOffsetLeft);
+				rightOffsetLeft = minLeft;
+
+			}
+
+
 		}
 
 			$("#content").css({
 				"width" : CONFIG.contentWidth
 			})
 
-			console.log( CONFIG.windowHeight, CONFIG.contentHeight)
+			// console.log( CONFIG.windowHeight, CONFIG.contentHeight)
 
 		//menu position
 		var leftMenuCss = {

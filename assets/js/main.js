@@ -207,7 +207,7 @@ $(window).resize(function(){
 
 function checkBreakpoints(){
 
-	if(CONFIG.contentWidth < 500)
+	if(CONFIG.contentWidth < 700)
 	{
 		layoutChange("mobile");
 	}
@@ -243,10 +243,10 @@ function layoutChange(tag){
 		}
 		else if(curLayoutTag == "desktop")
 		{
-			if(isMobile)
-			{
+			// if(isMobile)
+			// {
 				MOBILE.deactivate();
-			}
+			// }
 			
 			isMobile = false;
 		}
@@ -260,7 +260,6 @@ function getWidthHeight(){
 		CONFIG.contentHeight = CONFIG.windowHeight;
 		CONFIG.contentWidth = CONFIG.windowWidth;
 
-		console.log("ASDADASD" , CONFIG.windowHeight)
 }
 
 
