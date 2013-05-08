@@ -9,6 +9,12 @@ html{
     position: relative;
     height: auto;
     overflow-y: hidden;
+
+}
+
+html.desktop{
+    width: 100%;
+    height: 100%;
 }
 
 body{
@@ -21,6 +27,13 @@ body.desktop{
     overflow: hidden;
     width: 100%;
     height: 100%;
+}
+
+#desktop-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
 }
 
 /*cursor style*/
@@ -44,9 +57,9 @@ body.leftArrow{
 
 #left-menu-container {
     position: absolute;
-    background-color: rgba(0,0,0,0.9);
+    background-color: black !important;
     color: white;
-    z-index: 4;
+    z-index: 9999 !important;
 }
 
 #left-menu .menu-content .title {
@@ -92,7 +105,7 @@ hr {
     color: white;
     overflow-y: auto;
     overflow-x: hidden;
-    z-index: 3;
+    z-index: 9999 !important;
 }
 
 .menu-content{
@@ -131,7 +144,7 @@ hr {
 #background-container {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     z-index: 1;
     top: 0;
@@ -139,6 +152,8 @@ hr {
 }
 .background {
     position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .background.loading {

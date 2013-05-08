@@ -228,30 +228,39 @@ function layoutChange(tag){
 
 		for( var i = 0 ; i < allLayoutTags.length ; i++)
 		{
-			$("body").removeClass(allLayoutTags[i]);
+			$("body,html").removeClass(allLayoutTags[i]);
 		}
 
-		$("body").addClass(curLayoutTag);
+		$("body,html").addClass(curLayoutTag);
+
+
 
 		if(curLayoutTag == "mobile")
 		{
+			console.log("LOADING MOBILE")
 			MOBILE.init();
 			isMobile = true;
 		}
 		else if(curLayoutTag == "desktop")
 		{
-			MOBILE.deactivate();
+			if(isMobile)
+			{
+				MOBILE.deactivate();
+			}
+			
 			isMobile = false;
 		}
 	}
 }
 
 function getWidthHeight(){
-		CONFIG.windowHeight = $(window).height();
-		CONFIG.windowWidth 	= $(window).width();
+		CONFIG.windowHeight = window.innerHeight;
+		CONFIG.windowWidth 	= window.innerWidth;
 
 		CONFIG.contentHeight = CONFIG.windowHeight;
 		CONFIG.contentWidth = CONFIG.windowWidth;
+
+		console.log("ASDADASD" , CONFIG.windowHeight)
 }
 
 

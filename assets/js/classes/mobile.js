@@ -77,7 +77,7 @@ function mobileClass(){
 			"top" : 0,
 			"left" : 0 ,
 			"width" : "auto",
-			"height" : "auto",
+			"height" : "auto"
 		})
 
 		//adding clicks

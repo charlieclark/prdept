@@ -4,26 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 
-	<!-- libraries -->
-	<script src="assets/js/libs/jquery.js"></script>
-	<script src="assets/js/libs/handlebars.js"></script>
 
-	<script src="assets/js/config.js"></script>
-	<script src="assets/js/main.js"></script>
-
-	<!-- data -->
-	<script src="assets/js/assetData.js"></script>
-	<script src="assets/js/copyData.js"></script>
-	
-	<!-- main -->
-	<script src="assets/js/classes/detection.js"></script>
-	<script src="assets/js/classes/preload.js"></script>
-	<script src="assets/js/classes/utils.js"></script>
-	<script src="assets/js/classes/template.js"></script>
-	<script src="assets/js/classes/layout.js"></script>
-	<script src="assets/js/classes/twitter.js"></script>
-	<script src="assets/js/classes/mobile.js"></script>
-	<script src="assets/js/classes/share.js"></script>
 
 
 	<!-- css -->
@@ -47,6 +28,24 @@
 </head>
 
 <body>
+
+	<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+	
+	<script>
+	if (!(window.console && console.log)) {
+	    (function() {
+	        var noop = function() {};
+	        var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'markTimeline', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'];
+	        var length = methods.length;
+	        var console = window.console = {};
+	        while (length--) {
+	            console[methods[length]] = noop;
+	        }
+	    }());
+	  }
+  </script>
 
 	<div id="content">
 
@@ -192,6 +191,27 @@
 				</div>
 		{{/each}}
 	</script>
+
+		<!-- libraries -->
+	<script src="assets/js/libs/jquery.js"></script>
+	<script src="assets/js/libs/handlebars.js"></script>
+
+	<script src="assets/js/config.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<!-- data -->
+	<script src="assets/js/assetData.js"></script>
+	<script src="assets/js/copyData.js"></script>
+	
+	<!-- main -->
+	<script src="assets/js/classes/detection.js"></script>
+	<script src="assets/js/classes/preload.js"></script>
+	<script src="assets/js/classes/utils.js"></script>
+	<script src="assets/js/classes/template.js"></script>
+	<script src="assets/js/classes/layout.js"></script>
+	<script src="assets/js/classes/twitter.js"></script>
+	<script src="assets/js/classes/mobile.js"></script>
+	<script src="assets/js/classes/share.js"></script>
 
 
 </body>

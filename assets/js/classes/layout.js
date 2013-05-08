@@ -382,25 +382,24 @@ function layoutClass(){
 			rightOffsetTop = CONFIG.contentHeight - (rightHeight + leftOffset)
 			rightOffsetLeft = CONFIG.contentWidth - (rightWidth + leftOffset);
 		}
-		else
-		{
+
 			$("#content").css({
 				"width" : CONFIG.contentWidth
 			})
-		}
 
+			console.log( CONFIG.windowHeight, CONFIG.contentHeight)
 
 		//menu position
 		var leftMenuCss = {
-			"top" : leftOffset,
-			"left" : leftOffset,
+			"top" : leftOffset + "px",
+			"left" : leftOffset + "px",
 			"height" : leftHeight,
 			"width" : leftWidth
 		}
 
 		var rightContentCss = {
-			"top" : rightOffsetTop,
-			"left" : rightOffsetLeft,
+			"top" : rightOffsetTop + "px",
+			"left" : rightOffsetLeft + "px",
 			"height" : rightHeight,
 			"width" : rightWidth
 		}
@@ -408,15 +407,15 @@ function layoutClass(){
 
 		//menu content
 		var leftMenuContentCss = {
-			"top" : padding,
-			"left" : padding,
+			"top" : padding + "px",
+			"left" : padding + "px",
 			"height" : leftMenuCss.height - (padding * 2),
 			"width"	 : leftMenuCss.width - (padding * 2)
 		}
 
 		var rightMenuContentCss = {
-			"top" : padding,
-			"left" : padding,
+			"top" : padding + "px",
+			"left" : padding + "px",
 			"height" : rightContentCss.height - (padding * 2),
 			"width"	 : rightContentCss.width - (padding * 2)
 		}
@@ -440,8 +439,8 @@ function layoutClass(){
 					"width" : imgDim.w,
 					"height" : imgDim.h,
 					"top" : imgDim.t + "px",
-					"left" : imgDim.l + "px",
-				})
+					"left" : imgDim.l + "px"
+				});
 			}
 		});
 
